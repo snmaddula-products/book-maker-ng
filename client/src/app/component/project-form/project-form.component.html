@@ -1,0 +1,27 @@
+<div class="example-container" [formGroup]="form">
+  
+  <mat-form-field>
+    <input matInput placeholder="Project Name" formControlName="projectName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Roles" formControlName="roles" multiple>
+      <mat-option *ngFor="let role of rolesList" [value]="role">{{role}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <mat-checkbox style="padding-right: 22%">Pre Checks</mat-checkbox>
+    <mat-checkbox style="padding-left: 22%">Post Checks</mat-checkbox>
+  </div>
+  
+
+  <mat-form-field>
+    <input matInput placeholder="GitLab Url" formControlName="gitUri">
+  </mat-form-field>
+
+  <div class="example-button-row" #submitB>
+    <button mat-raised-button color="primary" (click)="generateProject()">Submit</button>
+  </div>
+
+</div>
